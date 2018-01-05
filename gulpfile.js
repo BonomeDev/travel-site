@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
     cssvars = require('postcss-simple-vars'),
-    nested = require('postcss-nested');
+    nested = require('postcss-nested'),
+    importcss = require('postcss-import');
 
 gulp.task('default', function(){
     console.log('Huray - you create a gulp task!');
@@ -17,8 +18,10 @@ gulp.task('style', function(){
     return gulp.src('./app/assets/styles/styles.css')
         .pipe(postcss([
             cssvars,
+            importcss,
             nested,
-            autoprefixer
+            autoprefixer,
+            
         ]))
         .pipe(gulp.dest('./app/temp/styles'));
 });
