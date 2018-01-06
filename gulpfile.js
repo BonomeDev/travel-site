@@ -17,8 +17,8 @@ gulp.task('html', function(){
 gulp.task('style', function(){
     return gulp.src('./app/assets/styles/styles.css')
         .pipe(postcss([
-            cssvars,
             importcss,
+            cssvars,
             nested,
             autoprefixer,
             
