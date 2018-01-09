@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     cssvars = require('postcss-simple-vars'),
     nested = require('postcss-nested'),
-    importcss = require('postcss-import');
+    importcss = require('postcss-import'),
+    mixins = require('postcss-mixins');
 
 
 gulp.task('styles', function(){
@@ -11,6 +12,7 @@ gulp.task('styles', function(){
         .pipe(postcss([
             importcss,
             cssvars,
+            mixins,
             nested,
             autoprefixer,
             
